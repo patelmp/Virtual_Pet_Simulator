@@ -1,5 +1,93 @@
 ﻿using System;
 using System.Collections.Generic;
+using Random = System.Random;
+
+
+public class Pet
+// Here using Get and set method to check multiple codition 
+{
+    public string Type { get; }
+    public string Name { get; }
+    public int Hunger { get; private set; }
+    public int Happiness { get; private set; }
+    public int Health { get; private set; }
+
+    public Pet(string type, string name)
+    {
+        Type = type;
+        Name = name;
+        Hunger = 10;
+        Happiness = 10;
+        Health = 10;
+    }
+
+
+
+    public void Feed()
+    {
+        Hunger--;
+        Health++;
+        Console.WriteLine($"You feed {Name}. His hunger decreases, and health improves slightly.");
+    }
+
+    public void Play()
+    {
+        if (Happiness <= 2)
+        {
+            Console.WriteLine($"{Name} is too unhappy to play. Try feeding them or resting them.");
+            return;
+        }
+
+        Happiness--;
+        Hunger++;
+        Console.WriteLine($"You played with {Name}.His happiness increases, but he's a bit hungry.");
+    }
+
+    public void Rest()
+    {
+        Happiness--;
+        Health++;
+        Console.WriteLine($"{Name} is now more healthy!");
+    }
+
+    public void CheckStatus()
+    {
+        Console.WriteLine($"{Name}'s stats:");
+        Console.WriteLine($"- Hunger : {Hunger}");
+        Console.WriteLine($"- Happiness : {Happiness}");
+        Console.WriteLine($"- Health : {Health}");
+
+        if (Hunger <= 2)
+        {
+            Console.WriteLine($"{Name} is very hungry! Feed them soon.");
+        }
+        else if (Happiness >= 8)
+        {
+            Console.WriteLine($"{Name} is very happy! They might need a break.");
+        }
+
+        if (Health <= 2)
+        {
+            Console.WriteLine($"{Name} is very sick! Take them to the vet!");
+        }
+        else if (Health >= 8)
+        {
+            Console.WriteLine($"{Name} is in great health!");
+        }
+    }
+
+    public void TimePass()
+    {
+        Hunger++;
+        Happiness--;
+
+        if (new Random().NextDouble() < 0.1)
+        {
+            Health--;
+            Console.WriteLine($"{Name} got sick! Their health is now {Health}.");
+        }
+    }
+}
 public static class Program
 {
     private static readonly string name;
