@@ -11,6 +11,21 @@ public static class Program
         Console.WriteLine("3. Rabbit");
         Console.WriteLine("Enter your choice from given list from 1, 2, or 3. ");
         Console.Write("User InPut : ");
-        inint choice = Convert.ToInt32(Console.ReadLine());
+        int choice = Convert.ToInt32(Console.ReadLine());
+        //Using If else condition so user can select any one of the pet.
+        if (choice == 1)
+        {
+        }
+        else if (choice == 2)
+        {
+        }
+        else if (choice == 3)
+        {
+        }
+        else
+        {
+            Console.WriteLine("Invalid choice. Please choose from 1, 2, or 3.");
+            return;
+        }
     }
 }
