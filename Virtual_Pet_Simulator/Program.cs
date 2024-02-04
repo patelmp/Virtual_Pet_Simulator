@@ -31,5 +31,9 @@ public static class Program
         Console.Write("User InPut : ");
 
         string petName = Console.ReadLine();
+        Console.WriteLine("Welcome, " + petName + "! Lets take good care of him.");
+
+        var pet = new Pet(petType, petName);
+
     }
 }
