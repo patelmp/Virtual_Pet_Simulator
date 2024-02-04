@@ -45,6 +45,28 @@ public static class Program
             ["5"] = pet.TimePass,
             ["6"] = () => Environment.Exit(0)
         };
+        // using while loop if top codition is true.
+        while (true)
+        {
+            Console.WriteLine("\nMain Menu:");
+            Console.WriteLine("1. Feed " + petName);
+            Console.WriteLine("2. Play With " + petName);
+            Console.WriteLine("3. Let " + petName + " Rest");
+            Console.WriteLine("4. Check " + petName + "'s Status");
+            Console.WriteLine("5. Time Pass With " + petName);
+            Console.WriteLine("6. Exit");
+            Console.Write("User InPut : ");
+            string action = Console.ReadLine();
+            //Using If else condition to check action or main menu
+            if (actions.ContainsKey(action))
+            {
+                actions[action]();
+            }
+            else
+            {
+                Console.WriteLine("Invalid action. Please try again.");
+            }
+        }
 
     }
 }
