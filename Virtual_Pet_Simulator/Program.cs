@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 public static class Program
 {
     private static readonly string name;
@@ -34,6 +35,16 @@ public static class Program
         Console.WriteLine("Welcome, " + petName + "! Lets take good care of him.");
 
         var pet = new Pet(petType, petName);
+
+        var actions = new Dictionary<string, Action>
+        {
+            ["1"] = pet.Feed,
+            ["2"] = pet.Play,
+            ["3"] = pet.Rest,
+            ["4"] = pet.CheckStatus,
+            ["5"] = pet.TimePass,
+            ["6"] = () => Environment.Exit(0)
+        };
 
     }
 }
