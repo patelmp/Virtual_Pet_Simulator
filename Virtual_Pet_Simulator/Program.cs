@@ -11,6 +11,6 @@ public static class Program
         Console.WriteLine("3. Rabbit");
         Console.WriteLine("Enter your choice from given list from 1, 2, or 3. ");
         Console.Write("User InPut : ");
-        int choice = Convert.ToInt32(Console.ReadLine());
+        inint choice = Convert.ToInt32(Console.ReadLine());
     }
 }
