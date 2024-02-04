@@ -27,5 +27,9 @@ public static class Program
             Console.WriteLine("Invalid choice. Please choose from 1, 2, or 3.");
             return;
         }
+        Console.WriteLine("You’ve chosen a " + petType + ". What would you like to name your pet?.");
+        Console.Write("User InPut : ");
+
+        string petName = Console.ReadLine();
     }
 }
